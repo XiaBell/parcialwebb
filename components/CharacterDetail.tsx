@@ -9,12 +9,14 @@ function getBorderColor(house: string): string {
   const key = house && house.trim() ? house : "NoHouse";
   return BorderColorHouses[key] ?? BorderColorHouses.NoHouse;
 }
+//en inglés pq 
 
 interface Dict {
   gender: string;
   house: string;
   wand: string;
   wood: string;
+  core: string;
   length: string;
   centimeters: string;
   unknown: string;
@@ -40,6 +42,8 @@ export default function CharacterDetail({
     }
     return `${length} ${dict.centimeters}`;
   };
+
+  const w = character.wand;
 
   return (
     <div className="flex flex-col items-center p-6">
@@ -76,20 +80,29 @@ export default function CharacterDetail({
               <span className="font-semibold">{dict.house}:</span>{" "}
               {character.house || dict.noHouse}
             </p>
-          </div>
-          <section className="mt-4 border-t pt-4">
-            <h2 className="mb-3 text-lg font-semibold">{dict.wand}</h2>
-            <div className="space-y-2 text-sm">
+            {w ? (
+              <>
+                <p>
+                  <span className="font-semibold">{dict.wood}:</span>{" "}
+                  {w.wood || dict.unknown}
+                </p>
+                <p>
+                  <span className="font-semibold">{dict.core}:</span>{" "}
+                  {w.core || dict.unknown}
+                </p>
+                <p>
+                  <span className="font-semibold">{dict.length}:</span>{" "}
+                  {formatWandLength(w.length)}
+                </p>
+              </>
+            ) : (
               <p>
-                <span className="font-semibold">{dict.wood}:</span>{" "}
-                {character.wand?.wood || dict.unknown}
+                <span className="font-semibold">{dict.wand}:</span>{" "}
+                {dict.unknown}
               </p>
-              <p>
-                <span className="font-semibold">{dict.length}:</span>{" "}
-                {formatWandLength(character.wand?.length)}
-              </p>
+            )}
             </div>
-          </section>
+          
         </div>
       </article>
     </div>
