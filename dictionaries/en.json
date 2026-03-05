@@ -1,5 +1,24 @@
 {
   "welcome": "Welcome",
   "spanish": "Spanish",
-  "english": "English"
+  "english": "English",
+  "logoAlt": "Explore the magical world of Harry Potter with voldemort and Hogwarts characters",
+  "legalText": "© 2026 HarryPotterApp. All rights reserved.",
+  "pageTitle": "Character List",
+  "pageSubtitle": "HarryPotterApp",
+  "homeDescription": "Explore the magical universe of Harry Potter with voldemort: a complete character list with their house, species and main data.",
+  "detailDescription": "View detailed information for each character in the magical world: house, actor/actress, wand, species, ancestry and other relevant data.",
+  "gender": "Gender",
+  "house": "House",
+  "wand": "Wand",
+  "wood": "Wood",
+  "core": "Core",
+  "length": "Length",
+  "centimeters": "centimeters",
+  "actor": "Actor/Actress",
+  "species": "Species",
+  "ancestry": "Ancestry",
+  "noHouse": "No House",
+  "unknown": "Unknown",
+  "backToList": "Back to list"
 }

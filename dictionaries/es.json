@@ -1,5 +1,24 @@
 {
   "welcome": "Bienvenido",
   "spanish": "Español",
-  "english": "Inglés"
+  "english": "Inglés",
+  "logoAlt": "Explora el universo mágico de Harry Potter con voldemort y personajes de Hogwarts",
+  "legalText": "© 2026 HarryPotterApp. Todos los derechos reservados.",
+  "pageTitle": "Listado de personajes",
+  "pageSubtitle": "HarryPotterApp",
+  "homeDescription": "Explora el universo mágico de Harry Potter con voldemort: un listado completo de personajes con su casa, especie y datos principales.",
+  "detailDescription": "Consulta información detallada de cada personaje del mundo mágico: casa, actor/actriz, varita, especie, ascendencia y otros datos relevantes.",
+  "gender": "Género",
+  "house": "Casa",
+  "wand": "Varita",
+  "wood": "Madera",
+  "core": "Núcleo",
+  "length": "Longitud",
+  "centimeters": "centímetros",
+  "actor": "Actor/Actriz",
+  "species": "Especie",
+  "ancestry": "Ascendencia",
+  "noHouse": "Sin Casa",
+  "unknown": "Desconocido",
+  "backToList": "Volver al listado"
 }
