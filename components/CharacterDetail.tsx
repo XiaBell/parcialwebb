@@ -108,3 +108,5 @@ export default function CharacterDetail({
     </div>
   );
 }
+
+// a diferencia del ejemplo del parcial, que se da el de draco malfoy, el unicorn tail hair no es un tipo de varita sino 1 de los 3 nucleos posibles, así q lo puse como es jajaj :p me gusta harry potter srry
