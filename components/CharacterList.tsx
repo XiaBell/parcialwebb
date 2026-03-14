@@ -1,18 +1,11 @@
 import CharacterCard from "./CharacterCard";
-import type { Character } from "@/lib/api";
 
-export default function CharacterList({
-  characters,
-  lang,
-}: {
-  characters: Character[];
-  lang: string;
-}) {
+export default function CharacterList({ characters, lang }: any) {
   return (
-    <section className="grid grid-cols-2 gap-4 p-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-      {characters.map((character) => (
-        <CharacterCard key={character.id} character={character} lang={lang} />
+    <div className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-6">
+      {characters.map((c: any) => (
+        <CharacterCard key={c.id} character={c} lang={lang} />
       ))}
-    </section>
+    </div>
   );
 }

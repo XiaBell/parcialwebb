@@ -1,52 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BgColorHouses } from "@/lib/constants";
-import type { Character } from "@/lib/api";
 
-const PLACEHOLDER_IMAGE =
-  "https://ik.imagekit.io/hpapi/harry.jpg";
-
-function getHouseBg(house: string): string {
-  const key = house && house.trim() ? house : "NoHouse";
-  return BgColorHouses[key] ?? BgColorHouses.NoHouse;
-}
-
-function getTextColor(house: string): string {
-  return house === "Hufflepuff" || house === "NoHouse"
-    ? "text-gray-900"
-    : "text-white";
-}
-
-export default function CharacterCard({
-  character,
-  lang,
-}: {
-  character: Character;
-  lang: string;
-}) {
-  const bgClass = getHouseBg(character.house);
-  const textClass = getTextColor(character.house);
-  const imageUrl = character.image || PLACEHOLDER_IMAGE;
+export default function CharacterCard({ character, lang }: any) {
+  const bgClass = BgColorHouses[character.house] ?? BgColorHouses.NoHouse;
+  const textColor = character.house === "Hufflepuff" || !character.house ? "text-gray-900" : "text-white";
 
   return (
-    <Link href={`/${lang}/character/${character.id}`}>
-      <article
-        className={`${bgClass} flex flex-col items-center rounded-lg p-4 shadow-lg transition hover:scale-105`}
-      >
-        <div className="relative mb-3 h-40 w-32 overflow-hidden rounded">
+    <Link href={"/" + lang + "/character/" + character.id}>
+      <div className="rounded overflow-hidden border border-gray-300">
+        <div className={bgClass + " p-2 text-center"}>
+          <p className={"text-sm font-semibold " + textColor}>{character.name}</p>
+        </div>
+        <div style={{ position: "relative", height: 190 }}>
           <Image
-            src={imageUrl}
+            src={character.image || "https://ik.imagekit.io/hpapi/harry.jpg"}
             alt={character.name}
             fill
-            className="object-cover"
-            sizes="128px"
-            unoptimized={!imageUrl.includes("ik.imagekit.io")}
+            style={{ objectFit: "cover" }}
+            unoptimized
           />
         </div>
-        <h3 className={`text-center font-semibold drop-shadow-md ${textClass}`}>
-          {character.name}
-        </h3>
-      </article>
+      </div>
     </Link>
   );
 }
